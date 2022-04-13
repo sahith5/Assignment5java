@@ -19,11 +19,29 @@ public class Main {
             while(sc.hasNext())
             {
                 String str=sc.nextLine();
+
+                System.out.println(str);
                 for(int i=0;i<str.length();i++)
                 {
-                  mp.put(str.charAt(i),mp.get(str.charAt(i))+1); //mp.get(str.charAt(i))
+                    if(!mp.containsKey(str.charAt(i)))
+                    {
+                        mp.put(str.charAt(i),1);
+                    }
+                    else
+                    {
+                        mp.put(str.charAt(i),mp.get(str.charAt(i))+1);
+                    }
+
                 }
             }
+            for(Character key:mp.keySet())
+            {
+                System.out.println(key+" "+mp.get(key));
+                pw.println(key+" "+mp.get(key));
+
+            }
+            sc.close();
+            pw.close();
 
 
         }
