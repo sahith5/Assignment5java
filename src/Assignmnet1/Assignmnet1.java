@@ -35,17 +35,29 @@ public class Assignmnet1 {
                 }
             } // else if ends here
         } // stack is not empty loop ends here
-        Scanner sc = new Scanner(System.in);
-        String pattern = sc.nextLine();
+        while(true) {
+            int flag=0;
+            System.out.println("enter the file name");
+            Scanner sc = new Scanner(System.in);
+            String pattern = sc.nextLine();
 
-        for (File f : filelist) {
-            String filenamestr = f.getName();
+            for (File f : filelist) {
+                String filenamestr = f.getName();
 
-            if (filenamestr.matches("(.*)" + pattern + "(.*)")) {
-                Path path = Paths.get(f.getName());
-                System.out.println(path.toAbsolutePath());
+                if (filenamestr.matches("(.*)" + pattern + "(.*)")) {
+                    Path path = Paths.get(f.getName());
+                    System.out.println(path.toAbsolutePath());
+                    flag=1;
+                }
+
+
+
             }
-
+            if(flag==0)
+            {
+                System.out.println("No file found");
+                break;
+            }
 
         }
 

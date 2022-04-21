@@ -13,8 +13,10 @@ public class Main {
     public static void main(String[] args) {
         HashMap<Character,Integer> mp=new HashMap<>();
         Scanner sc;
+        Scanner s=new Scanner(System.in);
+        String filename=s.nextLine();
         try {
-            sc=new Scanner(new File("input.txt"));
+            sc=new Scanner(new File(filename+".txt"));
             PrintWriter pw=new PrintWriter("output.txt");
             while(sc.hasNext())
             {
